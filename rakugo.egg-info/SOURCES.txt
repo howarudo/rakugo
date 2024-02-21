@@ -1,0 +1,8 @@
+README.md
+setup.py
+rakugo.egg-info/PKG-INFO
+rakugo.egg-info/SOURCES.txt
+rakugo.egg-info/dependency_links.txt
+rakugo.egg-info/not-zip-safe
+rakugo.egg-info/requires.txt
+rakugo.egg-info/top_level.txt
