@@ -3,7 +3,7 @@
 ## Setup
 1. pyenv
 
-Install `pyenv`!
+Install `pyenv`! Check [documentation](https://github.com/pyenv/pyenv)
 
 2. Make new pyenv environment and then set it as a local env
 ```
@@ -20,3 +20,7 @@ make install_package
 ```
 make setup_local
 ```
+
+
+## Rule of Thumb
+1.
