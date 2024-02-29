@@ -26,13 +26,9 @@ make setup_local
 
 ### Before
 
-<figure class="video_container">
-  <iframe src="results/v1/rakugo_v1.mp4" frameborder="0" allowfullscreen="true">
-</iframe>
-</figure>
+![Rakugo original clip](results/v1/rakugo_v1.mp4)
+
+https://githubusercontent.com/howarudo/rakugo/main/results/v1/rakugo_v1_final.mp4
 
 ### After
-<figure class="video_container">
-  <iframe src="results/v1/rakugo_v1_final.mp4" frameborder="0" allowfullscreen="true">
-</iframe>
-</figure>
+![Rakugo after editting clip](results/v1/rakugo_v1_final.mp4)
