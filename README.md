@@ -28,5 +28,7 @@ make setup_local
 
 ![Rakugo original clip](results/v1/rakugo_v1.mp4)
 
+https://githubusercontent.com/howarudo/rakugo/main/results/v1/rakugo_v1_final.mp4
+
 ### After
 ![Rakugo after editting clip](results/v1/rakugo_v1_final.mp4)
