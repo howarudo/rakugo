@@ -26,7 +26,13 @@ make setup_local
 
 ### Before
 
-![rakugo video](results/v1/rakugo_v1.mp4)
+<figure class="video_container">
+  <iframe src="results/v1/rakugo_v1.mp4" frameborder="0" allowfullscreen="true">
+</iframe>
+</figure>
 
 ### After
-![rakugo video](results/v1/rakugo_v1_final.mp4)
+<figure class="video_container">
+  <iframe src="results/v1/rakugo_v1_final.mp4" frameborder="0" allowfullscreen="true">
+</iframe>
+</figure>
