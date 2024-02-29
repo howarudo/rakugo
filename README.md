@@ -3,7 +3,7 @@
 ## Setup
 1. pyenv
 
-Install `pyenv`! Check [documentation](https://github.com/pyenv/pyenv)
+Install `pyenv`. Check [documentation](https://github.com/pyenv/pyenv)
 
 2. Make new pyenv environment and then set it as a local env
 ```
@@ -21,6 +21,12 @@ make install_package
 make setup_local
 ```
 
+## Demo Showcase
+- We have completed a rough model for transformation.
 
-## Rule of Thumb
-1.
+### Before
+
+![rakugo video](results/v1/rakugo_v1.mp4)
+
+### After
+![rakugo video](results/v1/rakugo_v1_final.mp4)
