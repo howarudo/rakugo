@@ -10,8 +10,9 @@ dotenv_path = Path("__file__").resolve().parents[0] / '.local.env'
 load_dotenv(dotenv_path)
 
 OpenAI.api_key = os.getenv("OPENAI_API_KEY")
-data_path = Path("__file__").resolve().parents[0] / "local_data"
+data_path = Path("__file__").resolve().parents[0] / "data_processing"
 
+user_input_path = Path("__file__").resolve().parents[0] / "user_input"
 
 st.markdown(
     """
@@ -25,26 +26,37 @@ uploaded_video = st.file_uploader("Choose a video...", type="mp4")
 uploaded_audio = st.file_uploader("Choose an audio...", type="mp3")
 
 if uploaded_video is not None and uploaded_audio is not None:
+    # ====================================
+    # INPUT PROCESSING
+    # ====================================
+    st.markdown("### Processing Input...")
     st.video(uploaded_video)
     video_bytes_data = uploaded_video.getvalue()
     audio_bytes_data = uploaded_audio.getvalue()
 
-    with open("user_input.mp4", 'wb') as f:
+    video_input_path = os.path.join(user_input_path, "user_input.mp4")
+    audio_input_path = os.path.join(user_input_path, "user_input.mp3")
+
+    with open(video_input_path, 'wb') as f:
         f.write(video_bytes_data)
 
-    with open("user_input.mp3", 'wb') as f:
+    with open(audio_input_path, 'wb') as f:
         f.write(audio_bytes_data)
 
     duration = 60 * 1000
-    video = VideoFileClip("user_input.mp4")
+    video = VideoFileClip(video_input_path)
     video = video.subclip(0, int(duration/1000))
 
-    audio = AudioSegment.from_file("user_input.mp3", format="mp3")
+    audio = AudioSegment.from_file(audio_input_path, format="mp3")
     audio = audio[:duration]
 
+    # ====================================
+    # SPEECH - TEXT PROCESSING
+    # ====================================
+    st.markdown("### Speech - Text Processing...")
     client = OpenAI()
 
-    audio_file = open("user_input.mp3", "rb")
+    audio_file = open(audio_input_path, "rb")
 
     transcript = client.audio.transcriptions.create(
         file=audio_file,
@@ -70,8 +82,14 @@ if uploaded_video is not None and uploaded_audio is not None:
 
     sentences = [segment["text"] for segment in segments]
 
+    st.write("We heard...")
     input_text = "\n".join([f"{i+1}. {sentence}" for i, sentence in enumerate(sentences)])
     st.write(input_text)
+
+    # ====================================
+    # TEXT - TEXT PROCESSING
+    # ====================================
+    st.markdown("### Text - Text Processing...")
     JLPT_LEVEL = "N4"
 
 
@@ -95,10 +113,15 @@ if uploaded_video is not None and uploaded_audio is not None:
     import re
 
     easified_sentences = re.findall(r"\d+\. (.+)", completion_output)
+    st.write("Easified sentences")
     st.write(easified_sentences)
 
+    # ====================================
+    # TEXT - SPEECH PROCESSING
+    # ====================================
+    st.markdown("### Text - Speech Processing...")
     ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
-    audio_file_paths = ["user_input.mp3"]
+    audio_file_paths = [audio_input_path]
 
     from elevenlabs import clone, generate
 
@@ -129,7 +152,6 @@ if uploaded_video is not None and uploaded_audio is not None:
         audio_file_path = os.path.join(temp_res_file_path, f"rakugo_v1_{i}.mp3")
         with open(audio_file_path, "wb") as f:
             f.write(audio)
-        st.write(f"audio file saved to {audio_file_path}")
 
     from pydub import AudioSegment
     from pydub.effects import speedup
@@ -147,18 +169,15 @@ if uploaded_video is not None and uploaded_audio is not None:
             speeded_audio = audio
         else:
             speeded_audio = speedup(audio, speed)
-        st.write(f"speeded audio with speed {speed}")
         speeded_audio.export(os.path.join(temp_res_file_path, f"rakugo_v1_{i}_speeded.mp3"), format="mp3")
-        st.write(f"audio file saved")
 
 
     for i, segment in enumerate(segments):
         audio_file_path = os.path.join(temp_res_file_path, f"rakugo_v1_{i}_speeded.mp3")
-        original_audio_file_path = "user_input.mp3"
+        original_audio_file_path = audio_input_path
         original_audio = AudioSegment.from_file(original_audio_file_path, format="mp3")
         audio = AudioSegment.from_file(audio_file_path, format="mp3")
         current_time = segment['start'] * 1000
-        st.write("current_time", current_time, "segment start", segment['start'], "segment end", segment['end'])
         if i == 0:
             fill_dur = current_time
             fill = original_audio[:fill_dur]
@@ -176,12 +195,22 @@ if uploaded_video is not None and uploaded_audio is not None:
     final_res_file_path = os.path.join(data_path, "final_results")
 
     audio = mp.AudioFileClip(os.path.join(temp_res_file_path, "rakugo_v1_merged.mp3"))
-    video1 = mp.VideoFileClip("user_input.mp4")
+    video1 = mp.VideoFileClip(video_input_path)
     final = video1.set_audio(audio)
 
     final.write_videofile(os.path.join(final_res_file_path, "rakugo_v1_final.mp4"))
 
-    st.video(os.path.join(final_res_file_path, "rakugo_v1_final.mp4"))
+    st.write("Done processing audio!")
 
     st.header("Easified video")
-    st.write("This will take a while...")
+    st.video(os.path.join(final_res_file_path, "rakugo_v1_final.mp4"))
+
+
+    # ====================================
+    # Delete temporary results
+    # ====================================
+    import glob
+
+    files = glob.glob(os.path.join(temp_res_file_path, "*.mp3"))
+    for f in files:
+        os.remove(f)
