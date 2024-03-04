@@ -94,7 +94,7 @@ if uploaded_video is not None and uploaded_audio is not None:
 
 
     completion = client.chat.completions.create(
-    model="gpt-4",
+    model="ft:gpt-3.5-turbo-0125:personal::8ydSUhW6",
     messages=[
         {"role": "system", "content": """
         日本の落語の一節と日本語能力試験（JLPT）のレベルが与えられます。\n
@@ -114,7 +114,8 @@ if uploaded_video is not None and uploaded_audio is not None:
 
     easified_sentences = re.findall(r"\d+\. (.+)", completion_output)
     st.write("Easified sentences")
-    st.write(easified_sentences)
+    for i in range(len(easified_sentences)):
+        st.write(f"{i+1}. {easified_sentences[i]}")
 
     # ====================================
     # TEXT - SPEECH PROCESSING
