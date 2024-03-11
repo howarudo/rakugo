@@ -24,11 +24,15 @@ make setup_local
 ## Demo Showcase
 - We have completed a rough model for transformation.
 
+https://github.com/howarudo/rakugo/assets/125206676/9bfc0615-44dc-4fb2-a1ad-2b6370996690
+
 ### Before
 
-![Rakugo original clip](results/v1/rakugo_v1.mp4)
+https://github.com/howarudo/rakugo/assets/125206676/84767ea0-82ad-4e0d-908b-e63bc1756a60
 
-https://githubusercontent.com/howarudo/rakugo/main/results/v1/rakugo_v1_final.mp4
 
 ### After
-![Rakugo after editting clip](results/v1/rakugo_v1_final.mp4)
+
+https://github.com/howarudo/rakugo/assets/125206676/06b07c67-5276-4b32-9a11-18e14af899c4
+
+
