@@ -1,4 +1,4 @@
-# Rakugo
+# RakuRakuGo
 
 ## Setup
 1. pyenv
