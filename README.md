@@ -40,6 +40,7 @@ https://github.com/howarudo/rakugo/assets/125206676/84767ea0-82ad-4e0d-908b-e63b
   2. いま、おとのがくるまで通りかかって、あの竹の水仙にとても興味を持った。
   3. あたいはいくらですか？
   4. なんです？
+
 https://github.com/howarudo/rakugo/assets/125206676/06b07c67-5276-4b32-9a11-18e14af899c4
 
 
