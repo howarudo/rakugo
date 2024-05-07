@@ -41,6 +41,5 @@ https://github.com/howarudo/rakugo/assets/125206676/84767ea0-82ad-4e0d-908b-e63b
   4. あたい はいくらですか？
   5. なんです？
 
-https://github.com/howarudo/rakugo/assets/125206676/06b07c67-5276-4b32-9a11-18e14af899c4
-
+https://github.com/howarudo/rakugo/assets/125206676/2c235d5e-c5f6-4364-968e-93774bfb7eee
 
