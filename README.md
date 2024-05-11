@@ -26,6 +26,7 @@ make setup_local
 
 https://github.com/howarudo/rakugo/assets/125206676/9bfc0615-44dc-4fb2-a1ad-2b6370996690
 
+[UI Showcase Link If Above Fails](https://drive.google.com/file/d/17dy5GVw1CVPWwV1DiJc90YA54MPSvs26/view?usp=sharing)
 ### Before
   1. おようで、実はな、拙者は越中の守様の側用人で大槻刑部という者である。
   2. 今、殿が御駕籠でご通行になってあれにかかっている竹の水仙大層御意に召した。
@@ -34,6 +35,7 @@ https://github.com/howarudo/rakugo/assets/125206676/9bfc0615-44dc-4fb2-a1ad-2b63
 
 https://github.com/howarudo/rakugo/assets/125206676/84767ea0-82ad-4e0d-908b-e63bc1756a60
 
+[Before Video Link If Above Fails](https://drive.google.com/file/d/1i_2EBc4YcFihXoWBPU8BWlX8DlKxWMJl/view?usp=sharing)
 
 ### After
   1. おようで、実は、わたしは越中のお殿様のお世話をしている おおつきぎょうぶ という人だ。
@@ -43,3 +45,4 @@ https://github.com/howarudo/rakugo/assets/125206676/84767ea0-82ad-4e0d-908b-e63b
 
 https://github.com/howarudo/rakugo/assets/125206676/2c235d5e-c5f6-4364-968e-93774bfb7eee
 
+[Afer Video Link If Above Fails](https://drive.google.com/file/d/1GVf-6yaQzZYyH8XossaEWWSM5jwNx_vo/view?usp=sharing)
