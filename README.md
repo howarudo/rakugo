@@ -1,5 +1,9 @@
 # RakuRakuGo
 
+We won **Business Award** for the **Softbank x UTokyo UGIP Data & AI Hackathon**! 
+
+[LINK](https://www.softbank.jp/sbnews/entry/20240418_01)
+
 ## System
 
 <img width="479" alt="rakurakugo" src="https://github.com/howarudo/rakugo/assets/125206676/2af00643-80be-46c3-8c0c-b30a84597b21">
