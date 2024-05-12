@@ -1,5 +1,10 @@
 # RakuRakuGo
 
+## System
+
+<img width="479" alt="rakurakugo" src="https://github.com/howarudo/rakugo/assets/125206676/2af00643-80be-46c3-8c0c-b30a84597b21">
+
+
 ## Setup
 1. pyenv
 
